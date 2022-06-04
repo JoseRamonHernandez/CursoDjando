@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -20,3 +20,38 @@
 
 </body>
 </html>
+-->
+<title>{% block title %}{% endblock %} | José Ramón (T.S.U.)</title>
+
+<div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'home' %}">Portada</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'about-me' %}">Acerca de</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'portfolio' %}">Portafolio</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact' %}">Contacto</a>
+        </li>
+    </ul>
+</div>
+
+<a class="navbar-brand" href="{% url 'home' %}">José Ramón</a>
+
+<!-- Contenido -->
+
+{% block content %}{% endblock %}
+
+<!-- Estilos y fuentes del template  -->
+
+{% load static %}
+
+<!-- Bootstrap y Javascripts -->
+
+<script src="{% static 'core/vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'core/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'core/js/clean-blog.min.js' %}"></script>
